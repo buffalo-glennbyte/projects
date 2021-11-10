@@ -1,0 +1,26 @@
+Changelog Projects:
+
+Notes:
+Ask liam how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
+
+Succesfully implemented and tested:
+- NONE YET
+
+To be implemented:
+- Calculator (WIP)
+- Student enroller
+- Number guesser, both ways
+- Random selector
+- Age calculator
+- Sports planner, inputs goals and time. Link with database.
+
+V0.002:
+- Succesfully implemented exception handling in the main menu.
+- Started working on Calculator.
+	- See correctbook for desired workings.
+- Tried to implement exception handling for variable input, keeps looping after catching exception.
+
+V0.001:
+- Created menu.java to access and interact with different projects.
+- Added user input.
+- Attempted to create a try and catch exception.
