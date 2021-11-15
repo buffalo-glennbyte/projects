@@ -1,18 +1,38 @@
 Changelog Projects:
 
 Notes:
-Ask liam how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
+- Learn how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
+- Try to create functions for code I use regularly, like the inputScanner.
+- Try to think ahead about how I want the program to function.
+
 
 Succesfully implemented and tested:
 - NONE YET
 
 To be implemented:
 - Calculator (WIP)
+	- Add Exception handling for variables input, disallow anything except doubles.
 - Student enroller
 - Number guesser, both ways
 - Random selector
 - Age calculator
 - Sports planner, inputs goals and time. Link with database.
+
+V0.005:
+- Created multiple new datapoints: variable1, variable2 & result. These will be used in all functions.
+- Refactored main, int variables is now called varAmount.
+- Refactored main to accept double datatype as input instead of integer, this way user can input numbers like 3.33 instead of only allowing whole numbers. Only refactored for variables input, not for amount of variables as it isn't needed.
+- Implemented and tested all manipulating functions.
+- Rethinking how the program should work, see correctbook.
+
+V0.004:
+- Got an exception in the calculator if I try to input 1 or 0 for the amount of variables, java.util.NoSuchElementException specifically.
+- Seems to be related to closing the scanner, commented out those lines and it worked again.
+- Apparantly closing the scanner is not something what you want to do, unless you don't want to be able to input anything again. 
+- Created several functions for manipulation of variables in Calculator.
+
+V0.003:
+- Worked out why exception handling didn't work in the calculator, turns out I had to initialize the variable before the loop.
 
 V0.002:
 - Succesfully implemented exception handling in the main menu.
