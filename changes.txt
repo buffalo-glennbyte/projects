@@ -4,17 +4,21 @@ Notes:
 - Learn how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
 - Try to think ahead about how I want the program to function.
 
-
 Succesfully implemented and tested:
-- NONE YET
+- Calculator
 
 To be implemented:
 - Calculator (WIP)
 - Student enroller
 - Number guesser, both ways
-- Random selector
+- Random selector + coin tosser (WIP)
 - Age calculator
 - Sports planner, inputs goals and time. Link with database.
+
+V0.007:
+- Sidney noticed that results of math functions sometimes looked odd, liam suggested to cast the results in float which seemed to help.
+- Created the Random Selector class, implemented a menu and coin tosser.
+- Inserted Random Selector into Main Menu, now selectable.
 
 V0.006:
 - Implemented menu in calculator, figured it'd be better than asking the user to always create a custom formula.
@@ -33,14 +37,14 @@ V0.005:
 V0.004:
 - Got an exception in the calculator if I try to input 1 or 0 for the amount of variables, java.util.NoSuchElementException specifically.
 - Seems to be related to closing the scanner, commented out those lines and it worked again.
-- Apparantly closing the scanner is not something what you want to do, unless you don't want to be able to input anything again. 
+- Apparently closing the scanner is not something what you want to do, unless you don't want to be able to input anything again. 
 - Created several functions for manipulation of variables in Calculator.
 
 V0.003:
 - Worked out why exception handling didn't work in the calculator, turns out I had to initialize the variable before the loop.
 
 V0.002:
-- Succesfully implemented exception handling in the main menu.
+- Successfully implemented exception handling in the main menu.
 - Started working on Calculator.
 	- See correctbook for desired workings.
 - Tried to implement exception handling for variable input, keeps looping after catching exception.

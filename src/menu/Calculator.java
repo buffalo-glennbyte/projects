@@ -1,6 +1,5 @@
 package menu;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 /*
  * This is a simple calculator, created for fun and learning.
@@ -184,7 +183,7 @@ public class Calculator{
 				break;
 				
 			default: //If the user makes an incorrect or invalid choice
-				System.out.println("Invalid choice, please try again.");
+				System.out.println("Invalid choice, please try again.\n");
 			}
 		} while(exit != true); //End of the menu loop, 
 	}

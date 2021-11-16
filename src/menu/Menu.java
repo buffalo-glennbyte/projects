@@ -10,8 +10,6 @@
  */
 
 package menu;
-import java.util.Scanner;
-import java.util.InputMismatchException;
 
 
 /**
@@ -20,7 +18,7 @@ import java.util.InputMismatchException;
 public class Menu {
 
 	static //List of menu items
-	String[] menu = {"Main Menu","Calculator","Student Registry","Numbers game","Random Selecter","Age Calculator","Sports Planner","Exit Program"};
+	String[] menu = {"Main Menu","Calculator","Student Registry","Numbers game","Random Selector","Age Calculator","Sports Planner","Exit Program"};
 	
 	public static void main(String[] args) {
 		boolean exit = false;
@@ -34,27 +32,30 @@ public class Menu {
 			};
 			System.out.println();
 			
-		} while (exit);
-		
-		
-		//Accept user input and test it for validity:
-		int choice = 0;
-		do {
-			try {
-				Scanner inputScanner = new Scanner(System.in);
-				int input = inputScanner.nextInt();
-				if(input < menu.length && input > 0) {
-					System.out.println("You've chosen: " + menu[input]);
-					choice = input;
-				} else {
-					System.out.println("Wrong input, please try again.");	
-			}} catch (InputMismatchException e){
-				System.out.println("Please enter a number.");
-			} 
-		} while (choice == 0);
-		System.out.println(choice);
-		
-		Calculator.plus(33, 45);
-		Calculator.main(args);
+			// Start of menu loop, stops only if user activates exit program.
+			int choice = Calculator.intScan();
+			switch (choice) {
+			case 1: // Calculator
+				Calculator.main(args);
+				break;
+			case 2: //Student registry
+				break;
+			case 3: //Numbers game
+				break;
+			case 4: //Random selector
+				RandomSelector.main(args);
+				break;
+			case 5: //Age calculator
+				break;
+			case 6: //Sports planner
+				break;
+			case 7: //Exit program
+				System.out.println("Goodbye!");
+				exit = true;
+				Calculator.prompt();
+			default:
+				System.out.println("Wrong choice, try again.\n");
+			}
+		} while (exit != true);
 		}
 	}
