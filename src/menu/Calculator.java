@@ -8,6 +8,8 @@ import java.util.InputMismatchException;
  * Need to implement logic so user can use the array indexes with the calculator functions.
  * Would be nice if user can select which array indexes he wants to use with which function.
  * 
+ * Edit math functions to not return value, useful for the custom formula.
+ * 
  * Any feedback is more than welcome!
  * Message me @ glennbit.gb@gmail.com
  */
@@ -34,7 +36,7 @@ public class Calculator{
 			}
 		} while (temp);
 		return intput;
-	}
+	}	
 	public static double douScan() {
 		boolean temp = true;
 		do {
@@ -55,39 +57,40 @@ public class Calculator{
 	}
 	
 	//Calculator functions, all take 2 variables except root and square.
+	//All the result in the line print get show as a float, otherwise the result would sometimes look odd.
 	public static double plus(double var1, double var2) {
 		result = var1 + var2;
-		System.out.println(var1 + " + " + var2 + " = " + result);
+		System.out.println(var1 + " + " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 		}
 	public static double min(double var1 ,double var2) {
 		result = var1 - var2;
-		System.out.println(var1 + " - " + var2 + " = " + result);
+		System.out.println(var1 + " - " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
 	public static double div(double var1, double var2) {
 		result = var1 / var2;
-		System.out.println(var1 + " : " + var2 + " = " + result);
+		System.out.println(var1 + " : " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
 	public static double tim(double var1, double var2) {
 		result = var1 * var2;
-		System.out.println(var1 + " x " + var2 + " = " + result);
+		System.out.println(var1 + " x " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
 	public static double root(double var1) {
 		result = Math.sqrt(var1);
-		System.out.println("The square root of " + var1 + " is: " + result);
+		System.out.println("The square root of " + var1 + " is: " + (float)result);
 		Calculator.prompt();
 		return result;
 		}
 	public static double sqr(double var1) {
 		result = var1 * var1;
-		System.out.println(var1 + " squared is: " + result);
+		System.out.println(var1 + " squared is: " + (float)result);
 		Calculator.prompt();
 		return result;
 	}

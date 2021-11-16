@@ -23,14 +23,19 @@ public class Menu {
 	String[] menu = {"Main Menu","Calculator","Student Registry","Numbers game","Random Selecter","Age Calculator","Sports Planner","Exit Program"};
 	
 	public static void main(String[] args) {
-		// Start of main menu + options
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("Welcome to the main menu.\nPlease choose an option from below:");
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
-		for(int x = 1; x < menu.length; x++) {
-			System.out.println(x + ". " + menu[x]);
-		};
-		System.out.println();
+		boolean exit = false;
+		do {
+			// Start of main menu + options
+			System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+			System.out.println("Welcome to the main menu.\nPlease choose an option from below:");
+			System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
+			for(int x = 1; x < menu.length; x++) {
+				System.out.println(x + ". " + menu[x]);
+			};
+			System.out.println();
+			
+		} while (exit);
+		
 		
 		//Accept user input and test it for validity:
 		int choice = 0;
@@ -49,6 +54,7 @@ public class Menu {
 		} while (choice == 0);
 		System.out.println(choice);
 		
-
+		Calculator.plus(33, 45);
+		Calculator.main(args);
 		}
 	}
