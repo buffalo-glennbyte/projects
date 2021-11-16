@@ -2,7 +2,6 @@ Changelog Projects:
 
 Notes:
 - Learn how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
-- Try to create functions for code I use regularly, like the inputScanner.
 - Try to think ahead about how I want the program to function.
 
 
@@ -11,12 +10,18 @@ Succesfully implemented and tested:
 
 To be implemented:
 - Calculator (WIP)
-	- Add Exception handling for variables input, disallow anything except doubles.
 - Student enroller
 - Number guesser, both ways
 - Random selector
 - Age calculator
 - Sports planner, inputs goals and time. Link with database.
+
+V0.006:
+- Implemented menu in calculator, figured it'd be better than asking the user to always create a custom formula.
+- Moved previous main() into switch case 7, still incomplete though. See notes in beginning of Calculator.java.
+- Moved entire menu in do while loop, only exits when boolean exit flag equals true.
+- Added "press enter to continue.." prompt after every calculation. This way the user gets to read the output of the formula before the menu prints again.
+- Need to refactor menu in Main Menu class, implementation in calculator looks better.
 
 V0.005:
 - Created multiple new datapoints: variable1, variable2 & result. These will be used in all functions.
