@@ -53,6 +53,7 @@ public class Menu {
 				System.out.println("Goodbye!");
 				exit = true;
 				Calculator.prompt();
+				break;
 			default:
 				System.out.println("Wrong choice, try again.\n");
 			}

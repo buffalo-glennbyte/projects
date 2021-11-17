@@ -4,7 +4,7 @@ Notes:
 - Learn how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
 - Try to think ahead about how I want the program to function.
 
-Succesfully implemented and tested:
+Successfully implemented and tested:
 - Calculator
 
 To be implemented:
@@ -14,6 +14,15 @@ To be implemented:
 - Random selector + coin tosser (WIP)
 - Age calculator
 - Sports planner, inputs goals and time. Link with database.
+
+V0.008:
+- Fixed bug in Main Menu, after exiting program user would still get the message "Wrong choice, try again". Turned out I forgot a break; in the exit case.
+- Edited Calculator.prompt() to insert an empty line before "Press enter to continue..".
+- Made some small grammatical adjustments in Random Selector.
+- Inserted comments in Random Selector class, so I can understand what the functions do in the future.
+- Started working on Random Selector, starts loop which asks for user input until the user is satisfied.
+  Then returns all entries in the list and asks if the user wants to add/remove an entry or continue.
+- Need to rewrite coin toss option; create switch loop which also accepts abbreviated forms of heads and tails, implement want to play again? prompt and show total wins vs losses (+ winrate%?) at the end. 
 
 V0.007:
 - Sidney noticed that results of math functions sometimes looked odd, liam suggested to cast the results in float which seemed to help.

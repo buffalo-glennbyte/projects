@@ -50,7 +50,7 @@ public class Calculator{
 		return douput;
 	}
 	public static void prompt() {
-		System.out.println("Press enter to continue..");
+		System.out.println("\nPress enter to continue..");
 		Scanner prompt = new Scanner(System.in);
 		prompt.nextLine();
 	}
@@ -59,37 +59,37 @@ public class Calculator{
 	//All the result in the line print get show as a float, otherwise the result would sometimes look odd.
 	public static double plus(double var1, double var2) {
 		result = var1 + var2;
-		System.out.println(var1 + " + " + var2 + " = " + (float)result);
+		System.out.println("\n" + var1 + " + " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 		}
 	public static double min(double var1 ,double var2) {
 		result = var1 - var2;
-		System.out.println(var1 + " - " + var2 + " = " + (float)result);
+		System.out.println("\n" + var1 + " - " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
 	public static double div(double var1, double var2) {
 		result = var1 / var2;
-		System.out.println(var1 + " : " + var2 + " = " + (float)result);
+		System.out.println("\n" + var1 + " : " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
 	public static double tim(double var1, double var2) {
 		result = var1 * var2;
-		System.out.println(var1 + " x " + var2 + " = " + (float)result);
+		System.out.println("\n" + var1 + " x " + var2 + " = " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
 	public static double root(double var1) {
 		result = Math.sqrt(var1);
-		System.out.println("The square root of " + var1 + " is: " + (float)result);
+		System.out.println("\nThe square root of " + var1 + " is: " + (float)result);
 		Calculator.prompt();
 		return result;
 		}
 	public static double sqr(double var1) {
 		result = var1 * var1;
-		System.out.println(var1 + " squared is: " + (float)result);
+		System.out.println("\n" + var1 + " squared is: " + (float)result);
 		Calculator.prompt();
 		return result;
 	}
