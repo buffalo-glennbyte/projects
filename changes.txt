@@ -9,9 +9,17 @@ Successfully implemented and tested:
 
 To be implemented:
 - Calculator (WIP)
+	-Implement Pi calculator.
+		- what is position 'x' after comma
+		- calculate till position 'x' (print character after character?)
+		- wiki pi
+		- ascii pi
+	- Only accept ',' instead of guessing which to use
+	- Nothing behind the ','? Then cast (project?) the double as integer.
 - Student enroller
 - Number guesser, both ways
 - Random selector + coin tosser (WIP)
+	- Selecting logic for random selector
 - Age calculator
 - Sports planner, inputs goals and time. Link with database.
 
