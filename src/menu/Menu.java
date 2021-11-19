@@ -18,7 +18,7 @@ package menu;
 public class Menu {
 
 	static //List of menu items
-	String[] menu = {"Main Menu","Calculator","Student Registry","Numbers game","Random Selector","Age Calculator","Sports Planner","Exit Program"};
+	String[] menu = {"null","Calculator","Student Registry","Number guesser","Random Selector","Age Calculator","Sports Planner","Exit Program"};
 	
 	public static void main(String[] args) {
 		boolean exit = false;
@@ -40,7 +40,8 @@ public class Menu {
 				break;
 			case 2: //Student registry
 				break;
-			case 3: //Numbers game
+			case 3: //Number guesser
+				NumberGuesser.main(args);
 				break;
 			case 4: //Random selector
 				RandomSelector.main(args);
@@ -55,7 +56,7 @@ public class Menu {
 				Calculator.prompt();
 				break;
 			default:
-				System.out.println("Wrong choice, try again.\n");
+				System.out.println("Wrong input, try again.\n");
 			}
 		} while (exit != true);
 		}

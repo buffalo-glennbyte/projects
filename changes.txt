@@ -3,12 +3,16 @@ Changelog Projects:
 Notes:
 - Learn how to create a good flow chart of programs, how to efficiently divide tasks and set priorities.
 - Try to think ahead about how I want the program to function.
+- Maybe build help entries?
+- Implement username input in main menu, editable?
 
-Successfully implemented and tested:
+Successfully implemented in main menu application:
 - Calculator
+- RandomSelector
+- NumberGuesser
 
-To be implemented:
-- Calculator (WIP)
+Work in progress:
+- Calculator
 	-Implement Pi calculator.
 		- what is position 'x' after comma
 		- calculate till position 'x' (print character after character?)
@@ -16,12 +20,40 @@ To be implemented:
 		- ascii pi
 	- Only accept ',' instead of guessing which to use
 	- Nothing behind the ','? Then cast (project?) the double as integer.
+
 - Student enroller
-- Number guesser, both ways
+	- Thinking about scrapping this project, what I originally wanted to play around with I already implemented in other projects.
+	- So no use case for it right now..
+
+- Number guesser
+	- Write better program guessing logic, create an array and store the guessed numbers there? 
+		
 - Random selector + coin tosser (WIP)
-	- Selecting logic for random selector
+	- Implement saving and loading from file in random selector?
+	- Rewrite stats tracker in coin tosser, user can opt to print out the matches and results?
+
 - Age calculator
+	- User inputs date of birth
+		- Output the amount of weeks, days, hours, minutes and seconds the person has been alive to this moment.
+	- Optional, user inputs date of death.
+	 
 - Sports planner, inputs goals and time. Link with database.
+
+V0.009:
+- Rewrote input for random selector, now continually takes input until user inputs "Continue".
+- Rewrote input for coin tosser, now accepts tails & t or heads & h instead of always having to write it fully.
+- Rewrote coin tosser logic, now makes use of java.util.concurrent.ThreadLocalRandom to create a random boolean. If true then it's heads, otherwise it's tails.
+- Implemented an replay option to the coin tosser and game stats tracker, displayed at the end.
+- Implemented the selector logic within the random selector with the option to "reroll".
+- Started working on number guesser.
+	- Implemented loops asking for first and last integer of the range, breaks if first < last.
+	- Wrote 2 methods to set the first and last integers of the range.
+	- Wrote methods for starttime and endtime.
+	- Wrote a timeElapsed method, it computes the difference between the two time stamps and outputs it dynamically.
+	- Loop in place to ask if user wants to guess or if the program gets to guess.
+	- End of user guessing loop, feedback on stats.
+	- End of program guessing loop, feedback on stats. 
+	- Added replay question at the end, resets the first and last variables.
 
 V0.008:
 - Fixed bug in Main Menu, after exiting program user would still get the message "Wrong choice, try again". Turned out I forgot a break; in the exit case.
