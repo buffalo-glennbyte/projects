@@ -18,7 +18,7 @@ package menu;
 public class Menu {
 
 	static //List of menu items
-	String[] menu = {"null","Calculator","Student Registry","Number guesser","Random Selector","Age Calculator","Sports Planner","Exit Program"};
+	String[] menu = {"null","Calculator","Student Registry - DEPRECATED","Number guesser","Random Selector","Age Calculator","Sports Planner","Exit Program"};
 	
 	public static void main(String[] args) {
 		boolean exit = false;
@@ -47,6 +47,7 @@ public class Menu {
 				RandomSelector.main(args);
 				break;
 			case 5: //Age calculator
+				AgeCalculator.main(args);
 				break;
 			case 6: //Sports planner
 				break;

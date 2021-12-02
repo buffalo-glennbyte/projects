@@ -18,7 +18,7 @@ Work in progress:
 		- calculate till position 'x' (print character after character?)
 		- wiki pi
 		- ascii pi
-	- Only accept ',' instead of guessing which to use
+	- Only accept ',' instead of guessing which to use.
 	- Nothing behind the ','? Then cast (project?) the double as integer.
 
 - Student enroller
@@ -26,18 +26,43 @@ Work in progress:
 	- So no use case for it right now..
 
 - Number guesser
-	- Write better program guessing logic, create an array and store the guessed numbers there? 
+	- 
 		
 - Random selector + coin tosser (WIP)
 	- Implement saving and loading from file in random selector?
 	- Rewrite stats tracker in coin tosser, user can opt to print out the matches and results?
 
 - Age calculator
-	- User inputs date of birth
+	- User inputs date of birth.
 		- Output the amount of weeks, days, hours, minutes and seconds the person has been alive to this moment.
 	- Optional, user inputs date of death.
 	 
 - Sports planner, inputs goals and time. Link with database.
+
+V0.1:
+- Number Guesser, implemented 'memory' for the program if it has to guess. This way it doesn't guess the same number twice.
+	- Seems to not work, wrongly guessed generatedNumber gets added to arraylist correctly but logic to check if generatedNumber was guessed before doesn't work.
+	- Rewrote logic loop, still doesn't work but better readable.
+	- Rewrote the logic loop again, now it works except for the check if the amount of guesses equal the total range.
+		- Somehow it stops guessing at one less than the range, adding +1 to the range in the logic check doesn't work. Neither does initialising guessCount as -1.
+		- I think it's because if it generates a number that was guessed before, the guessCount counter goes up by one. 
+		  If it then generates another number thats in the guesses array, the guessCount counter goes up again.
+			- Removed the guessCount entirely, now stops correctly if the guesses array length equals the range.
+- Number Guesser, something goes wrong if the user answers no on the question if the range is correct, program gets stuck on blank line (doesn't crash).
+	- Fixed, turned out I didn't close a loop correctly. 
+- Number Guesser, something goes wrong if the user answers no on the replay question near the end of the program.
+	- Fixed, I forgot to put the main program in another loop but I did put the while condition at the end. Oops..
+- Number Guesser, added a cheat mode for the program which only enables if the user cheated first :D On recommendation of Ben.
+	- Added resets for the 'tries' counter to the beginning of guessing loops.
+- Started working on AgeCalculator, implemented a menu loop.
+	- Wrote setBegin, setEnd and timeCalculation methods.
+	- Wrote a DateTimeFormatter custom format, to be used in conjunction with users input.
+	- Under option 1, wrote loops for inputting birthdate and birthtime.
+		- Rewrote them and implemented them as getBirthdate and getBirthtime methods in the beginning of the program.
+		- Take user input and check that against a custom format.
+			- If true, continue with input.
+			- If false, repeat until condition is true.
+- Made changes to method stringput in Random Selector, now outputs a stringbuilder which can be modified.
 
 V0.009:
 - Rewrote input for random selector, now continually takes input until user inputs "Continue".

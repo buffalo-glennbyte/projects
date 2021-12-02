@@ -19,9 +19,9 @@ public class RandomSelector {
 	static boolean exit = false;	// Initial exit value, only modified if user selects exit program.
 	
 	// Input scanner for text
-	public static String stringput() {
+	public static StringBuilder stringput() {
 		Scanner stringput = new Scanner(System.in);
-		String input = stringput.next();
+		StringBuilder input = new StringBuilder(stringput.next());
 		return input;
 	}
 	// Coin tosser, returns heads or tails.
@@ -56,7 +56,7 @@ public class RandomSelector {
 				System.out.println("Allright, so you can't decide between a couple of options you say? Let me help you out ;)\nPlease enter all the options, seperated with an enter.\nType 'Continue' if you want to continue to the next phase.\n");
 				boolean Break = false;
 				do {
-					String input = RandomSelector.stringput();
+					String input = RandomSelector.stringput().toString();
 					switch (input) {
 					case "Continue":
 						Break = true;
@@ -76,7 +76,7 @@ public class RandomSelector {
 					}
 					// Starts a loop in which the user can edit entries or continue
 					System.out.println("\nDo you want to Add/Remove an entry or Continue?");
-					switch (RandomSelector.stringput().toLowerCase()) {
+					switch (RandomSelector.stringput().toString().toLowerCase()) {
 					case "c": case "continue":
 						cont = true;
 						break;
@@ -94,7 +94,7 @@ public class RandomSelector {
 						
 					case "a": case "add":
 						System.out.println("\nWhat do you want to add?");
-						list.add(RandomSelector.stringput().toLowerCase());
+						list.add(RandomSelector.stringput().toString().toLowerCase());
 						break;
 						
 					default:
@@ -109,7 +109,7 @@ public class RandomSelector {
 					int RSchoice = (int)(Math.random() * list.size());
 					System.out.println("And I've randomly chosen: " + list.get(RSchoice));
 					System.out.println("Are you satisfied or do you want me to choose randomly again?");
-					String choice = RandomSelector.stringput();
+					String choice = RandomSelector.stringput().toString();
 					switch (choice) {
 					case "a" : case "again":
 						break;
@@ -134,7 +134,7 @@ public class RandomSelector {
 				int wins = 0, loss = 0 , coinheads = 0, cointails = 0, userheads = 0, usertails = 0;
 				// The tracking variables get initialised above me, game loop starts underneath me.
 				do {
-					String side = RandomSelector.stringput().toLowerCase();
+					String side = RandomSelector.stringput().toString().toLowerCase();
 					System.out.println("");
 					switch(side) {
 					case "t": case "tails": case "h": case "heads":
@@ -169,7 +169,7 @@ public class RandomSelector {
 						}
 						// Replay question, if user answers no then the loop stops
 						System.out.println("\nWant to play again?");
-						String replay = RandomSelector.stringput().toLowerCase();
+						String replay = RandomSelector.stringput().toString().toLowerCase();
 						switch(replay) {
 						case "yes": case "y":
 							System.out.println("\nPick a side:");
