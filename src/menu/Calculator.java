@@ -1,5 +1,10 @@
 package menu;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
+import java.awt.Desktop;
 
 /*
  * This is a simple calculator, created for fun and learning.
@@ -49,10 +54,20 @@ public class Calculator{
 		}while(temp);
 		return douput;
 	}
+	
+	//A prompt to press enter & method to print txt line by line to console.
 	public static void prompt() {
 		System.out.println("\nPress enter to continue..");
 		Scanner prompt = new Scanner(System.in);
 		prompt.nextLine();
+	}
+	public static void PrintPi() throws FileNotFoundException {
+		System.out.println();
+		File temp = new File ("ASCII PI.txt");
+		Scanner txt = new Scanner(temp);
+		while(txt.hasNextLine()) {
+			System.out.println(txt.nextLine());
+		}
 	}
 	
 	//Calculator functions, all take 2 variables except root and square.
@@ -95,10 +110,11 @@ public class Calculator{
 	}
 	
 	//Menu list
-	static String[] menu = {"empty","Addition","Subtraction","Division","Multiplication","Squareroot","Squared","Custom formula","Exit calculator"};
+	static String[] menu = {"empty","Addition","Subtraction","Division","Multiplication","Squareroot","Squared","Custom formula","Pi calculator","Exit calculator"};
+	static String[] pimenu = {"empty", "Print Pi", "What is number X after the decimal?", "Print Pi until decimal X", "What is Pi?", "Back to previous menu"};
 	
 	//Main program
-	public static void main (String[] args) {
+	public static void main (String[] args) throws FileNotFoundException {
 		System.out.println("Welcome to the calculator!");
 		
 		//Beginning of the menu loop, keeps looping until the user modifies the boolean exit with option 7.
@@ -176,7 +192,49 @@ public class Calculator{
 				Calculator.prompt();
 				break;
 				
-			case 8: //Exit program choice
+			case 8: // Pi calculator loop
+				boolean piExit = false;
+				do {
+					System.out.println("\nWelcome to the Pi calculator!\nChoose what you want to do:\n");
+					for(int t=1; t < pimenu.length; t++) {
+						System.out.println(t + ". " + pimenu[t]);
+					}
+					System.out.println();
+					int pichoice = Calculator.intScan(); 
+					switch(pichoice) {
+					
+					case 1: // Print Pi
+						Calculator.PrintPi();
+						break;
+						
+					case 2: // Number X after decimal
+						System.out.println("\nWhat number after the decimal do you want to know?");
+						int numberPi = Calculator.intScan();
+						double pi = Math.PI;
+						System.out.println("Decimal number " + numberPi + " is:");
+						System.out.printf("%." + numberPi + "f", pi);
+						break;
+						
+					case 3: // Print Pi until X
+						
+						break;
+						
+					case 4: //What is Pi?
+						
+						break;
+						
+					case 5: // Back to previous menu
+						piExit = true;
+						break;
+						
+					default: //If the user makes an incorrect or invalid choice
+						System.out.println("Invalid choice, please try again.\n");
+					}
+				} while (piExit != true);
+				
+				break;
+				
+			case 9: //Exit program choice
 				System.out.println("Goodbye!");
 				exit = true;
 				Calculator.prompt();

@@ -18,7 +18,7 @@ public class NumberGuesser {
 	static private int first, last, tries;
 	static private Instant start;
 	static private Instant stop;
-	static private boolean cheating = false;
+	static private boolean cheatProg = false;
 	
 	private static void setRange () {
 		do{ // A loop asking for first and last integer of the range, only exits if 'first' is lower than 'last'
@@ -88,7 +88,7 @@ public class NumberGuesser {
 					String answer = RandomSelector.stringput().toString().toLowerCase();
 					switch (answer) {
 					case "y": case "yes":
-						exit1 = true;
+						exit1 = false;
 						System.out.println("\nDo you want to guess or should I guess?");
 						String answer2 = RandomSelector.stringput().toString().toLowerCase();
 				
@@ -99,7 +99,7 @@ public class NumberGuesser {
 							System.out.println("\nGenerating random number between " + (first -1) + " and " + (last + 1) + "..\nDone! :)");
 							NumberGuesser.startTime();
 							boolean exit2 = false;
-							if (cheating = false) {
+							if (cheatProg == false) {
 								do {
 									System.out.println("\nWhat is your guess?");
 									int guess = Calculator.intScan();
@@ -119,24 +119,27 @@ public class NumberGuesser {
 								exit1 = true;
 								break;
 							} else {
-								String nmbrs = "1234567890";
 								int guess = 0;
+								boolean cheatProgLoop = false;
 								do {
-									System.out.println("\nWhat is your guess? Answer 'quitter' to quit.");
-									StringBuilder ans = RandomSelector.stringput();
-									if(ans.toString().compareToIgnoreCase("quitter") == 0) {
-										System.out.println("\nSo you give up eh? I expected nothing less..");
-										exit2 = true;
-										NumberGuesser.stopTime();
-										break;
-									} else if(ans.toString().contains(nmbrs)) {
-										try {
-											guess = Integer.parseInt(ans.toString());
-										} catch (NumberFormatException e) {
-											// TODO Auto-generated catch block
-											e.printStackTrace();
+									do {
+										cheatProgLoop = false;
+										System.out.println("\nWhat is your guess? Answer 'quitter' to quit.");
+										StringBuilder ans = RandomSelector.stringput();
+										if(ans.toString().compareToIgnoreCase("quitter") == 0) {
+											System.out.println("\nSo you give up eh? I expected nothing less..");
+											exit2 = true;
+											NumberGuesser.stopTime();
+											break;
+										} else {
+											try {
+												guess = Integer.parseInt(ans.toString());
+												cheatProgLoop = true;
+												break;
+											} catch (NumberFormatException e) {}
+											System.out.println("\nInvalid input, please try again.");
 										}
-									}
+									} while(cheatProgLoop != true);
 									if(guess < first || guess > last) {
 										System.out.println("\nThat's outside of the range stupid! So I'm not gonna count this as a real guess.");
 									} else if(guess == generatedNumber) {
@@ -160,7 +163,7 @@ public class NumberGuesser {
 							System.out.println("\nAllright, but I'm not gonna stop until I guessed it! :D\nDo you have a number in mind?");
 							Calculator.prompt();
 							NumberGuesser.startTime();
-							boolean cheat = false;
+							boolean userCheat = false;
 							boolean exit3 = false;
 							int genGuess;
 							do {
@@ -169,8 +172,8 @@ public class NumberGuesser {
 									genGuess = (rand.nextInt(range) + first);
 									if(guesses.size() == range) { // Checks if the amount of guesses equal the total range, if true then it breaks both loops and
 										System.out.println("\nYou haven't been paying attention, I guessed every number in the range!\nSo I automatically win and I will close this match.");
-										cheat = true;
-										cheating = true;
+										userCheat = true;
+										cheatProg = true;
 										isValid = true;
 										exit3 = true;
 										NumberGuesser.stopTime();
@@ -202,19 +205,21 @@ public class NumberGuesser {
 									}
 								}
 							} while(exit3 != true);
-							if (cheat) { 	// If the user 'cheated', this gets run.
+							if (userCheat) { 	// If the user 'cheated', this gets run.
 								System.out.println("\nYou've wasted " + NumberGuesser.timeElapsed() + " of our time, thanks for that!");
 								Calculator.prompt();
+								exit1 = true;
 							} else {		// Otherwise this gets run
 								System.out.println("\nIt took me " + tries + " tries and I did it in: " + NumberGuesser.timeElapsed() + ".");
 								Calculator.prompt();
+								exit1 = true;
 							}
 							break;
 						default:
 							System.out.println("\nPlease input 'me' or 'you'.");
 							break;
 						}
-						exit1 = true;
+//						exit1 = true;
 						break;
 					case "n": case "no": // User gets to change beginning and the end of the range
 						NumberGuesser.setRange();

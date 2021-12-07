@@ -10,6 +10,7 @@ Successfully implemented in main menu application:
 - Calculator
 - RandomSelector
 - NumberGuesser
+- AgeCalculator
 
 Work in progress:
 - Calculator
@@ -26,7 +27,6 @@ Work in progress:
 	- So no use case for it right now..
 
 - Number guesser
-	- 
 		
 - Random selector + coin tosser (WIP)
 	- Implement saving and loading from file in random selector?
@@ -38,6 +38,10 @@ Work in progress:
 	- Optional, user inputs date of death.
 	 
 - Sports planner, inputs goals and time. Link with database.
+
+V0.1.1:
+- NumberGuesser, reworked the cheat loop. Should function properly.
+- Calculator, started implementation of Pi calculator.
 
 V0.1:
 - Number Guesser, implemented 'memory' for the program if it has to guess. This way it doesn't guess the same number twice.
