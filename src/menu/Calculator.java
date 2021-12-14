@@ -1,8 +1,14 @@
 package menu;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Scanner;
 import java.awt.Desktop;
 
@@ -220,7 +226,20 @@ public class Calculator{
 						break;
 						
 					case 4: //What is Pi?
-						
+						try {
+							URL wiki = new URL("https://en.wikipedia.org/wiki/Pi");
+							URLConnection urlcon = wiki.openConnection();
+							System.out.println("\nWikipedia states that this is Pi:\n");
+							BufferedReader br = new BufferedReader(new InputStreamReader(urlcon.getInputStream()));
+							String i;
+							while ((i = br.readLine()) != null) {
+								System.out.println(i);
+							}
+						} catch (MalformedURLException e) {
+							e.printStackTrace();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
 						break;
 						
 					case 5: // Back to previous menu
