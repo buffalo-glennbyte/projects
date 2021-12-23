@@ -11,6 +11,7 @@
 
 package menu;
 
+import java.io.FileNotFoundException;
 
 /**
  * @author Buffalo
@@ -20,7 +21,7 @@ public class Menu {
 	static //List of menu items
 	String[] menu = {"null","Calculator","Student Registry - DEPRECATED","Number guesser","Random Selector","Age Calculator","Sports Planner","Exit Program"};
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		boolean exit = false;
 		do {
 			// Start of main menu + options
